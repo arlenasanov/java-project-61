@@ -9,7 +9,6 @@ public class Even implements GameMethods {
     int number;
 
     public static void runGame() {
-        final int numberOfGame = 2;
         Engine.start(new Even());
     }
 

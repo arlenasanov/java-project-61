@@ -11,7 +11,6 @@ public class Calc implements GameMethods {
     char ch;
 
     public static void runGame() {
-        final int numberOfGame = 3;
         Engine.start(new Calc());
     }
 
