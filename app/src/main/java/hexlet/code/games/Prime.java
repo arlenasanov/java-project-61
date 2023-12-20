@@ -17,14 +17,17 @@ public class Prime implements GameMethods {
 
     public String getData() {
         Random random = new Random();
-        int minRandomNumber = 2, maxRandomNumber = 100;
+        int minRandomNumber = 2;
+        int maxRandomNumber = 100;
         number = random.nextInt(minRandomNumber, maxRandomNumber);
         return " " + number;
     }
 
     public String getResult() {
         for (int i = 2; i <= Math.sqrt(number); i++) {
-            if (number % i == 0) return "no";
+            if (number % i == 0) {
+                return "no";
+            }
         }
         return "yes";
     }

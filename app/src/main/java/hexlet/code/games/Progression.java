@@ -19,8 +19,10 @@ public class Progression implements GameMethods {
 
     public String getData() {
         Random random = new Random();
-        int minRandomNumber = 0, maxRandomNumber = 100;
-        int minDifference = 1, maxDifference = 10;
+        int minRandomNumber = 0;
+        int maxRandomNumber = 100;
+        int minDifference = 1;
+        int maxDifference = 10;
 
         a1 = random.nextInt(minRandomNumber, maxRandomNumber);
         difference = random.nextInt(minDifference, maxDifference);

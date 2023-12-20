@@ -3,7 +3,8 @@ package hexlet.code.games;
 import java.util.Random;
 
 import hexlet.code.Engine;
-public class GCD implements GameMethods{
+
+public class GCD implements GameMethods {
     int number1;
     int number2;
 
@@ -17,7 +18,8 @@ public class GCD implements GameMethods{
 
     public String getData() {
         Random random = new Random();
-        int minRandomNumber = 0, maxRandomNumber = 100;
+        int minRandomNumber = 0;
+        int maxRandomNumber = 100;
         char[] expressionSigns = {'+', '-', '*'};
 
         number1 = random.nextInt(minRandomNumber, maxRandomNumber);

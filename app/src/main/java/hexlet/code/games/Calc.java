@@ -20,7 +20,8 @@ public class Calc implements GameMethods {
 
     public String getData() {
         Random random = new Random();
-        int minRandomNumber = 0, maxRandomNumber = 1000;
+        int minRandomNumber = 0;
+        int maxRandomNumber = 1000;
         char[] expressionSigns = {'+', '-', '*'};
 
         number1 = random.nextInt(minRandomNumber, maxRandomNumber);

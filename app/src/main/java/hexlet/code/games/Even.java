@@ -18,7 +18,8 @@ public class Even implements GameMethods {
 
     public String getData() {
         Random random = new Random();
-        int minRandomNumber = 0, maxRandomNumber = 1000;
+        int minRandomNumber = 0;
+        int maxRandomNumber = 1000;
         number = random.nextInt(minRandomNumber, maxRandomNumber);
         return "" + number;
     }
