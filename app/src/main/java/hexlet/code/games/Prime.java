@@ -20,7 +20,7 @@ public class Prime implements GameMethods {
         int minRandomNumber = 2;
         int maxRandomNumber = 100;
         number = random.nextInt(minRandomNumber, maxRandomNumber);
-        return " " + number;
+        return "" + number;
     }
 
     public String getResult() {
