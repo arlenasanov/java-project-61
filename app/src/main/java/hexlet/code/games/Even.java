@@ -4,9 +4,9 @@ import java.util.Random;
 
 import hexlet.code.Engine;
 
-public class Even implements GameMethods {
+final public class Even implements GameMethods {
 
-    int number;
+    private int number;
 
     public static void runGame() {
         Engine.start(new Even());
@@ -18,8 +18,8 @@ public class Even implements GameMethods {
 
     public String getData() {
         Random random = new Random();
-        int minRandomNumber = 0;
-        int maxRandomNumber = 1000;
+        final int minRandomNumber = 0;
+        final int maxRandomNumber = 1000;
         number = random.nextInt(minRandomNumber, maxRandomNumber);
         return "" + number;
     }

@@ -4,11 +4,11 @@ import java.util.Random;
 
 import hexlet.code.Engine;
 
-public class Calc implements GameMethods {
+final public class Calc implements GameMethods {
 
-    int number1;
-    int number2;
-    char ch;
+    private int number1;
+    private int number2;
+    private char ch;
 
     public static void runGame() {
         Engine.start(new Calc());
@@ -20,8 +20,8 @@ public class Calc implements GameMethods {
 
     public String getData() {
         Random random = new Random();
-        int minRandomNumber = 0;
-        int maxRandomNumber = 1000;
+        final int minRandomNumber = 0;
+        final int maxRandomNumber = 1000;
         char[] expressionSigns = {'+', '-', '*'};
 
         number1 = random.nextInt(minRandomNumber, maxRandomNumber);
@@ -43,4 +43,6 @@ public class Calc implements GameMethods {
                 return "";
         }
     }
+
+
 }

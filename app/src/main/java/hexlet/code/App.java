@@ -10,6 +10,14 @@ import java.util.Scanner;
 public class App {
     public static void main(String[] args) {
 
+        final byte CLI = 1;
+        final byte EVEN = 2;
+        final byte CALC = 3;
+        final byte GCDGAME = 4;
+        final byte PROGRESSION = 5;
+        final byte PRIME = 6;
+        final byte EXIT = 7;
+
         System.out.println("Please enter the game number and press Enter.");
         System.out.println("1 - Greet\n" + "2 - Even\n" + "3 - Calc\n" + "4 - GCD\n"
                 + "5 - Progression\n" + "6 - Prime\n" + "0 - Exit");
@@ -20,25 +28,25 @@ public class App {
         System.out.println();
 
         switch (gameNumberSelection) {
-            case 1:
+            case CLI:
                 Cli.sayHello();
                 break;
-            case 2:
+            case EVEN:
                 Even.runGame();
                 break;
-            case 3:
+            case CALC:
                 Calc.runGame();
                 break;
-            case 4:
+            case GCDGAME:
                 GCD.runGame();
                 break;
-            case 5:
+            case PROGRESSION:
                 Progression.runGame();
                 break;
-            case 6:
+            case PRIME:
                 Prime.runGame();
                 break;
-            case 0:
+            case EXIT:
                 System.out.println("End of game.");
                 break;
             default:

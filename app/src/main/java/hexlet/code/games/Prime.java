@@ -4,8 +4,8 @@ import java.util.Random;
 
 import hexlet.code.Engine;
 
-public class Prime implements GameMethods {
-    int number;
+final public class Prime implements GameMethods {
+    private int number;
 
     public static void runGame() {
         Engine.start(new Prime());
@@ -17,8 +17,8 @@ public class Prime implements GameMethods {
 
     public String getData() {
         Random random = new Random();
-        int minRandomNumber = 2;
-        int maxRandomNumber = 100;
+        final int minRandomNumber = 2;
+        final int maxRandomNumber = 100;
         number = random.nextInt(minRandomNumber, maxRandomNumber);
         return "" + number;
     }

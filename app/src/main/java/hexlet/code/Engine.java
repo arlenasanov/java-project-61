@@ -11,7 +11,8 @@ public class Engine {
 
         Scanner scanner = new Scanner(System.in);
         int i = 0;
-        for (; i < 3; i++) {
+        int iterationsNumber = 3;
+        for (; i < iterationsNumber; i++) {
             System.out.println("Question: " + game.getData());
             System.out.print("Your answer: ");
             String answer = scanner.next();
@@ -20,12 +21,12 @@ public class Engine {
             } else {
                 System.out.println('\'' + answer + "' is wrong answer ;(. Correct answer was '"
                         + game.getResult() + "'.");
-                System.out.println("Let's try again, " + Cli.name + '!');
+                System.out.println("Let's try again, " + Cli.getName() + '!');
                 break;
             }
         }
-        if (i == 3) {
-            System.out.println("Congratulations, " + Cli.name + '!');
+        if (i == iterationsNumber) {
+            System.out.println("Congratulations, " + Cli.getName() + '!');
         }
     }
 }
