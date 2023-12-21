@@ -11,7 +11,7 @@ public class Engine {
 
         Scanner scanner = new Scanner(System.in);
         int i = 0;
-        int iterationsNumber = 3;
+        final int iterationsNumber = 3;
         for (; i < iterationsNumber; i++) {
             System.out.println("Question: " + game.getData());
             System.out.print("Your answer: ");

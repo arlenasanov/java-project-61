@@ -4,7 +4,7 @@ import java.util.Random;
 
 import hexlet.code.Engine;
 
-final public class Even implements GameMethods {
+public final class Even implements GameMethods {
 
     private int number;
 

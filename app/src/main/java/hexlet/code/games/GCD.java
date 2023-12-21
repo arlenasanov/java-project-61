@@ -4,7 +4,7 @@ import java.util.Random;
 
 import hexlet.code.Engine;
 
-final public class GCD implements GameMethods {
+public final class GCD implements GameMethods {
     private int number1;
     private int number2;
 

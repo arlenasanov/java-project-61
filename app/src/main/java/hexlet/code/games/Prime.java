@@ -4,7 +4,7 @@ import java.util.Random;
 
 import hexlet.code.Engine;
 
-final public class Prime implements GameMethods {
+public final class Prime implements GameMethods {
     private int number;
 
     public static void runGame() {

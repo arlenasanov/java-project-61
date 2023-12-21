@@ -4,7 +4,7 @@ import java.util.Random;
 
 import hexlet.code.Engine;
 
-final public class Progression implements GameMethods {
+public final class Progression implements GameMethods {
     private int result;
 
     public static void runGame() {
@@ -25,9 +25,11 @@ final public class Progression implements GameMethods {
         int a1 = random.nextInt(minRandomNumber, maxRandomNumber);
         final int difference = random.nextInt(minDifference, maxDifference);
 
-        int hiddenNumberIndex = random.nextInt(1, 10);
+        final int countOfNumbersInProgression = 10;
+        final int firstNumberIndex = 1;
+        int hiddenNumberIndex = random.nextInt(firstNumberIndex, countOfNumbersInProgression);
         String progression = "";
-        for (int i = 1; i <= 10; i++) {
+        for (int i = 1; i <= countOfNumbersInProgression; i++) {
             if (i == hiddenNumberIndex) {
                 progression += ".. ";
                 result = a1;
