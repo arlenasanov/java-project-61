@@ -1,12 +1,12 @@
 package hexlet.code.games;
 
 public final class GameRound {
-    private String question;
-    private String answer;
+    private final String question;
+    private final String answer;
 
-    GameRound(String question, String answer) {
-        this.question = question;
-        this.answer = answer;
+    GameRound(String q, String a) {
+        question = q;
+        answer = a;
     }
 
     public String getQuestion() {
