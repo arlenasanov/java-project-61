@@ -4,16 +4,21 @@ import java.util.Random;
 
 import hexlet.code.Engine;
 
-public final class GCD implements GameMethods {
+public final class GCD {
     private int number1;
     private int number2;
 
     public static void runGame() {
-        Engine.start(new GCD());
-    }
+        GameRound[] gameRound = new GameRound[3];
+        GCD game = new GCD();
 
-    public void getRules() {
-        System.out.println("Find the greatest common divisor of given numbers.");
+        final int iterationsNumber = 3;
+        for (int i = 0; i < iterationsNumber; i++) {
+            gameRound[i] = new GameRound(game.getData(), game.getResult());
+        }
+
+        final String ruleMessage = "Find the greatest common divisor of given numbers.";
+        Engine.start(gameRound, ruleMessage);
     }
 
     public String getData() {

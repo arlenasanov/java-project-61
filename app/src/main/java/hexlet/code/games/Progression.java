@@ -4,15 +4,20 @@ import java.util.Random;
 
 import hexlet.code.Engine;
 
-public final class Progression implements GameMethods {
+public final class Progression {
     private int result;
 
     public static void runGame() {
-        Engine.start(new Progression());
-    }
+        GameRound[] gameRound = new GameRound[3];
+        Progression game = new Progression();
 
-    public void getRules() {
-        System.out.println("What number is missing in the progression?");
+        final int iterationsNumber = 3;
+        for (int i = 0; i < iterationsNumber; i++) {
+            gameRound[i] = new GameRound(game.getData(), game.getResult());
+        }
+
+        final String ruleMessage = "What number is missing in the progression?";
+        Engine.start(gameRound, ruleMessage);
     }
 
     public String getData() {

@@ -4,18 +4,23 @@ import java.util.Random;
 
 import hexlet.code.Engine;
 
-public final class Calc implements GameMethods {
+public final class Calc {
 
     private int number1;
     private int number2;
     private char ch;
 
     public static void runGame() {
-        Engine.start(new Calc());
-    }
+        GameRound[] gameRound = new GameRound[3];
+        Calc game = new Calc();
 
-    public void getRules() {
-        System.out.println("What is the result of the expression?");
+        final int iterationsNumber = 3;
+        for (int i = 0; i < iterationsNumber; i++) {
+            gameRound[i] = new GameRound(game.getData(), game.getResult());
+        }
+
+        final String ruleMessage = "What is the result of the expression?";
+        Engine.start(gameRound, ruleMessage);
     }
 
     public String getData() {

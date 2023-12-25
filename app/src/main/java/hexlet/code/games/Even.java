@@ -4,16 +4,21 @@ import java.util.Random;
 
 import hexlet.code.Engine;
 
-public final class Even implements GameMethods {
+public final class Even {
 
     private int number;
 
     public static void runGame() {
-        Engine.start(new Even());
-    }
+        GameRound[] gameRound = new GameRound[3];
+        Even game = new Even();
 
-    public void getRules() {
-        System.out.println("Answer 'yes' if the number is even, otherwise answer 'no'.");
+        final int iterationsNumber = 3;
+        for (int i = 0; i < iterationsNumber; i++) {
+            gameRound[i] = new GameRound(game.getData(), game.getResult());
+        }
+
+        final String ruleMessage = "Answer 'yes' if the number is even, otherwise answer 'no'.";
+        Engine.start(gameRound, ruleMessage);
     }
 
     public String getData() {

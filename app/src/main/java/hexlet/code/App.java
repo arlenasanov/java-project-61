@@ -16,7 +16,7 @@ public class App {
         final byte gcdgame = 4;
         final byte progression = 5;
         final byte prime = 6;
-        final byte exit = 7;
+        final byte exit = 0;
 
         System.out.println("Please enter the game number and press Enter.");
         System.out.println("1 - Greet\n" + "2 - Even\n" + "3 - Calc\n" + "4 - GCD\n"
@@ -29,7 +29,7 @@ public class App {
 
         switch (gameNumberSelection) {
             case cli:
-                Cli.sayHello();
+                Engine.sayHello();
                 break;
             case even:
                 Even.runGame();
@@ -52,5 +52,7 @@ public class App {
             default:
                 System.out.println("Incorrect choice!");
         }
+
+        scanner.close();
     }
 }
