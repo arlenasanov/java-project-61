@@ -11,11 +11,11 @@ public final class Calc {
     private char ch;
 
     public static void runGame() {
-        GameRound[] gameRound = new GameRound[3];
+        final int countOfQuestions = 3;
+        GameRound[] gameRound = new GameRound[countOfQuestions];
         Calc game = new Calc();
 
-        final int iterationsNumber = 3;
-        for (int i = 0; i < iterationsNumber; i++) {
+        for (int i = 0; i < countOfQuestions; i++) {
             gameRound[i] = new GameRound(game.getData(), game.getResult());
         }
 

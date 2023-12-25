@@ -9,11 +9,11 @@ public final class GCD {
     private int number2;
 
     public static void runGame() {
-        GameRound[] gameRound = new GameRound[3];
+        final int countOfQuestions = 3;
+        GameRound[] gameRound = new GameRound[countOfQuestions];
         GCD game = new GCD();
 
-        final int iterationsNumber = 3;
-        for (int i = 0; i < iterationsNumber; i++) {
+        for (int i = 0; i < countOfQuestions; i++) {
             gameRound[i] = new GameRound(game.getData(), game.getResult());
         }
 
