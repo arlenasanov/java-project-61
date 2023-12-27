@@ -5,35 +5,37 @@ import java.util.Random;
 import hexlet.code.Engine;
 
 public final class Prime {
-    private int number;
 
     public static void runGame() {
-        final int countOfQuestions = 3;
-        GameRound[] gameRound = new GameRound[countOfQuestions];
+        final int countOfRounds = 3;
+        GameRound[] gameRound = new GameRound[countOfRounds];
         Prime game = new Prime();
 
-        for (int i = 0; i < countOfQuestions; i++) {
-            gameRound[i] = new GameRound(game.getData(), game.getResult());
+        int number;
+        String result;
+        for (int i = 0; i < countOfRounds; i++) {
+            number = game.getData();
+            result = game.isPrimeNumber(number) ? "yes" : "no";
+            gameRound[i] = new GameRound("" + number, result);
         }
 
         final String ruleMessage = "Answer 'yes' if given number is prime. Otherwise answer 'no'.";
-        Engine.start(gameRound, ruleMessage);
+        Engine.start(gameRound, ruleMessage, countOfRounds);
     }
 
-    public String getData() {
+    public int getData() {
         Random random = new Random();
         final int minRandomNumber = 2;
         final int maxRandomNumber = 100;
-        number = random.nextInt(minRandomNumber, maxRandomNumber);
-        return "" + number;
+        return random.nextInt(minRandomNumber, maxRandomNumber);
     }
 
-    public String getResult() {
+    public boolean isPrimeNumber(int number) {
         for (int i = 2; i <= Math.sqrt(number); i++) {
             if (number % i == 0) {
-                return "no";
+                return false;
             }
         }
-        return "yes";
+        return true;
     }
 }

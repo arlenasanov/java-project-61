@@ -4,30 +4,17 @@ import java.util.Scanner;
 import hexlet.code.games.GameRound;
 
 public class Engine {
-
-    private static String name;
-
-    public static void sayHello() {
+    public static void start(GameRound[] game, String ruleMessage, int countOfRounds) {
         System.out.println("Welcome to the Brain Games!");
         System.out.print("May I have your name? ");
         Scanner scanner = new Scanner(System.in);
-        name = scanner.next();
+        String name = scanner.next();
         System.out.println("Hello, " + name + '!');
-    }
-
-    public static String getName() {
-        return name;
-    }
-
-    public static void start(GameRound[] game, String ruleMessage) {
-        sayHello();
         System.out.println(ruleMessage);
 
-        Scanner scanner = new Scanner(System.in);
         int i = 0;
-        final int iterationsNumber = 3;
 
-        for (; i < iterationsNumber; i++) {
+        for (; i < countOfRounds; i++) {
             System.out.println("Question: " + game[i].getQuestion());
             System.out.print("Your answer: ");
             String answer = scanner.next();
@@ -36,12 +23,12 @@ public class Engine {
             } else {
                 System.out.println('\'' + answer + "' is wrong answer ;(. Correct answer was '"
                         + game[i].getAnswer() + "'.");
-                System.out.println("Let's try again, " + getName() + '!');
+                System.out.println("Let's try again, " + name + '!');
                 break;
             }
         }
-        if (i == iterationsNumber) {
-            System.out.println("Congratulations, " + getName() + '!');
+        if (i == countOfRounds) {
+            System.out.println("Congratulations, " + name + '!');
         }
 
         scanner.close();

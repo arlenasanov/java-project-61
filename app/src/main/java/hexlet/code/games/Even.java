@@ -5,31 +5,32 @@ import java.util.Random;
 import hexlet.code.Engine;
 
 public final class Even {
-
-    private int number;
-
     public static void runGame() {
-        final int countOfQuestions = 3;
-        GameRound[] gameRound = new GameRound[countOfQuestions];
+        final int countOfRounds = 3;
+        GameRound[] gameRound = new GameRound[countOfRounds];
         Even game = new Even();
 
-        for (int i = 0; i < countOfQuestions; i++) {
-            gameRound[i] = new GameRound(game.getData(), game.getResult());
+        int number;
+        String result;
+        for (int i = 0; i < countOfRounds; i++) {
+            number = game.getData();
+            result = game.isEven(number) ? "yes" : "no";
+            gameRound[i] = new GameRound("" + number, result);
         }
 
         final String ruleMessage = "Answer 'yes' if the number is even, otherwise answer 'no'.";
-        Engine.start(gameRound, ruleMessage);
+        Engine.start(gameRound, ruleMessage, countOfRounds);
     }
 
-    public String getData() {
+    public int getData() {
         Random random = new Random();
         final int minRandomNumber = 0;
         final int maxRandomNumber = 1000;
-        number = random.nextInt(minRandomNumber, maxRandomNumber);
-        return "" + number;
+        return random.nextInt(minRandomNumber, maxRandomNumber);
     }
 
-    public String getResult() {
-        return number % 2 == 0 ? "yes" : "no";
+    public boolean isEven(int number) {
+        return number % 2 == 0;
     }
+
 }
