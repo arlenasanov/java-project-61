@@ -10,7 +10,9 @@ public final class Calc {
         GameRound[] gameRound = new GameRound[countOfRounds];
         Calc game = new Calc();
 
-        int number1, number2, result;
+        int number1;
+        int number2;
+        int result;
         char sign;
         for (int i = 0; i < countOfRounds; i++) {
             number1 = game.getNumber();

@@ -10,7 +10,9 @@ public final class GCD {
         GameRound[] gameRound = new GameRound[countOfRounds];
         GCD game = new GCD();
 
-        int number1, number2, result;
+        int number1;
+        int number2;
+        int result;
         for (int i = 0; i < countOfRounds; i++) {
             number1 = game.getData();
             number2 = game.getData();
