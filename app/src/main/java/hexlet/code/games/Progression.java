@@ -34,7 +34,7 @@ public final class Progression {
         int a1 = random.nextInt(minRandomNumber, maxRandomNumber);
         difference = random.nextInt(minDifference, maxDifference);
 
-        final int minProgressionSize = 3;
+        final int minProgressionSize = 5;
         final int maxProgressionSize = 10;
         String[] progression = new String[random.nextInt(minProgressionSize, maxProgressionSize + 1)];
 
